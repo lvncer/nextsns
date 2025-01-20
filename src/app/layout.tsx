@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import AuthProviderWrapper from "./AuthProviderWrapper";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,21 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <AuthProviderWrapper>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </AuthProviderWrapper>
+        <AuthProviderWrapper>{children}</AuthProviderWrapper>
       </body>
     </html>
   );
