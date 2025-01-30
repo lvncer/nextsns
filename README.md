@@ -1,12 +1,23 @@
 # Next SNS
 
+## アジェンダ
+
+- [概要](#概要)
+- [デモ](#デモ)
+- [使用している技術スタック](#使用している技術スタック)
+- [ディレクトリ構成](#ディレクトリ構成)
+
 ## 概要
 
-このプロジェクトは、NextJs と NodeJs と MongoDB を使用して作成された SNS クローンアプリケーションです。
+よくあるSNS のクローンアプリケーションです。
 
 [https://nextsns.net](https://nextsns.net)
 
-## DEMO
+バックエンドのAPIサーバーはこちら
+
+[https://github.com/lvncer/real-sns-back-end](https://github.com/lvncer/real-sns-back-end)
+
+## デモ
 
 **TOP**
 ![demo1](public/assets/images/demo-1-top.png)
@@ -20,27 +31,10 @@
 **User Settings**
 ![demo4](public/assets/images/demo-4-user-setting.png)
 
-## Using Stacks
+## 使用している技術スタック
 
 ![frontend-stacks](public/assets/images/frontend-stacks.PNG)
 
 ![backend-stacks](public/assets/images/backend-stacks.PNG)
 
-## Directory Stracture
-
-```sh
-/
-├── public/         # 静的ファイル
-├── src/
-│   ├── app/        # Next.jsのApp Router
-│   ├── components/
-│   ├── constants/  # 定数（APIエンドポイントなど）
-│   ├── features/   # 機能単位のモジュール（例: 認証）
-│   ├── hooks/      # カスタムフック
-│   ├── lib/        # ユーティリティ関数
-│   ├── state/      # グローバル状態管理
-│   ├── styles/     # CSSやスタイル関連
-│   ├── test/       # テストコード（src内に移動も可）
-│   └── types/      # TypeScriptの型定義
-└── next.config.js  # Next.jsの設定
-```
+## ディレクトリ構成

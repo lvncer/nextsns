@@ -1,0 +1,39 @@
+@startuml test-er-diagram
+
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+hide circle
+class "User" as User {
+    - _id : int
+    + (username) : string
+    + (email) : string
+    + (password) : string
+    + (profilePicture) : string
+    + (coverPicture) : string
+    + (followers) : array
+    + (followings) : array
+    + (isAdmin) : boolean
+    + (desc) : string
+    + (city) : string
+    + (createdAt) : Date
+    + (updatedAt) : Date
+}
+class "Post" as Post {
+    - _id : int
+    + (userId) : string
+    + (desc) : string
+    + (img) : string
+    + (likes) : array
+    + (createdAt) : Date
+    + (updatedAt) : Date
+}
+
+User ||-right-|{ Post
+
+@endumlF

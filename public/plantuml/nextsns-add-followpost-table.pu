@@ -1,0 +1,49 @@
+@startuml nextsns_er_diagram
+
+left to right direction
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+class "User" {
+    - _id : ObjectId  // (PK)
+    + username : String
+    + email : String
+    + password : String
+    + profilePicture : String
+    + coverPicture : String
+    + followers : Array
+    + followings : Array
+    + isAdmin : Boolean
+    + desc : String
+    + city : String
+    + createdAt : Date
+    + updatedAt : Date
+}
+
+class "Post" {
+    + _id : ObjectId // (PK)
+    + userId : ObjectId  //(FK)
+    + desc : String
+    + img : String
+    + likes : Array
+    + createdAt : Date
+    + updatedAt : Date
+}
+
+class "Like" {
+    + _id : ObjectId //(PK)
+    + userId : ObjectId  // (User's FK)
+    + postId : ObjectId  // (Post's FK)
+    + createdAt : Date
+    + updatedAt : Date
+}
+
+User "1" --> "many" Post : "posts"
+User "1" --> "many" Like : "likes"
+Post "1" --> "many" Like : "liked by users"
+
+@enduml
